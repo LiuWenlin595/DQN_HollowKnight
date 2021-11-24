@@ -1,7 +1,4 @@
-# Readme
-> I am keeping upgrading this, so the code may change everyday.
-
-## Environment
+## 环境
 
 - windows 10 (We use win32 API to operate the little knight and get screenshots)
 - python 3.8.8
@@ -10,7 +7,7 @@
 - HP Bar mod for Hollow Knight (In order to get the boss hp to calculate the reward, please find the mod in `./hollow_knight_Data/`, and then copy the mod file to the game folder)
 - CUDA and cudnn for tensorflow
 
-## Usage
+## 使用
 
 - Now I only write train.py but not test.py (the file is just test some base functions not for model), you can write it by yourself if you get a good model.
 - I upload a saving file, if you never played this game, please move `/save_file/user3.dat` into save folder (usually `C:\user\_username_\AppData\LocalLow\Team Cherry\Hollow Knight`)
@@ -22,7 +19,7 @@
 - Press `F1` to start trainning. (Also you can use `F1` to stop trainning)
 
 
-## Code structure
+## 代码结构
 - Most training configuration is in `train.py`
 - `Agent.py` gets output actions from our model
 - `DQN.py` is the learning algorithm
@@ -38,30 +35,6 @@
 - `WindowsAPI` is used to get screenshot of the game, and `key_check()` is used to check which key is pressed.
 - `Helper` defines [Reward Jugment] fucntion, and other functions we may use
 
-## Changes
-
-- Add delay reward of an action
-
-- Make the mdoel output an action sequence
-
-- Use two models to output actions. One is for moving and the other is for attack/jump/skill
-
-- Apply RESNET
-
-- Add LSTM layers
-
-- Merge a part of action model and move model
-
-- Remvoe LSTM layers
-
-- No more Q value, reward is enough, Q value is too complex to learn.
-
-- Use kernel32 to read player Hp and hornet Hp.
-
-- Use different criteria to evaluate move and actions.
-
-- Do not use skill without souls
-
-- Use more precise scoring standards
-
-
+## 参考
+原版代码：https://github.com/ailec0623/DQN_HollowKnight
+对应B站视频：https://www.bilibili.com/s/video/BV1j54y1j7MQ
