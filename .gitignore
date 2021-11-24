@@ -1,0 +1,16 @@
+/logs_gpu/
+/model_gpu/
+/model/
+/OLD_FILE/
+/abyss/
+/act_memory/
+/move_memory/
+/__pycache__/
+./__pycache__
+/test_img/
+/OLD_FILE/
+/ce_ptr/
+/CE/
+*.png
+*.jpg
+*.pyc
