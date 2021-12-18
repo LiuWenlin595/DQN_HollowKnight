@@ -21,7 +21,7 @@ class FrameBuffer(threading.Thread):
     self._stop_event = threading.Event()
     
     self.hwnd = win32gui.FindWindow(None,'Hollow Knight')
-    self.left,self.top,x2,y2 = self.station_size
+    self.left, self.top, x2, y2 = self.station_size
     self.width = x2 - self.left + 1
     self.height = y2 - self.top + 1
 

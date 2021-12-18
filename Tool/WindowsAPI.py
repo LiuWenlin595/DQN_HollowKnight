@@ -1,19 +1,14 @@
-import cv2
 import numpy as np
 import win32gui, win32ui, win32con, win32api
-
-
-
-# get hollow knight hwnd
-hwnd = win32gui.FindWindow(None,'Hollow Knight')
 
 # get windows image of hollow knight
 # 抓取屏幕
 def grab_screen(region=None):
-  
-
+    # get hollow knight hwnd
+    hwnd = win32gui.FindWindow(None,'Hollow Knight')
+    
     if region:
-            left,top,x2,y2 = region
+            left, top, x2, y2 = region
             width = x2 - left + 1
             height = y2 - top + 1
     else:
@@ -32,7 +27,7 @@ def grab_screen(region=None):
     
     signedIntsArray = bmp.GetBitmapBits(True)
     img = np.fromstring(signedIntsArray, dtype='uint8')
-    img.shape = (height,width,4)
+    img.shape = (height, width, 4)
 
     srcdc.DeleteDC()
     memdc.DeleteDC()

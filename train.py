@@ -46,8 +46,6 @@ move_name = ["Move_Left", "Move_Right", "Turn_Left", "Turn_Right"]
 
 DELAY_REWARD = 1
 
-
-
 # 开启一局游戏
 def run_episode(hp, algorithm,agent,act_rmp_correct, move_rmp_correct,PASS_COUNT,paused):
     restart()
@@ -205,7 +203,6 @@ def run_episode(hp, algorithm,agent,act_rmp_correct, move_rmp_correct,PASS_COUNT
 
 
 if __name__ == '__main__':
-
     # In case of out of memory
     # 保证显存溢出还可以正常工作
     config = tf.compat.v1.ConfigProto(allow_soft_placement=True)
@@ -216,8 +213,8 @@ if __name__ == '__main__':
     total_remind_hp = 0
 
     # 移动经验池和动作经验池
-    act_rmp_correct = ReplayMemory(MEMORY_SIZE, file_name='./act_memory')         # experience pool
-    move_rmp_correct = ReplayMemory(MEMORY_SIZE,file_name='./move_memory')         # experience pool
+    act_rmp_correct = ReplayMemory(MEMORY_SIZE, file_name='./act_memory') 
+    move_rmp_correct = ReplayMemory(MEMORY_SIZE,file_name='./move_memory') 
     
     # new model, if exit save file, load it
     model = Model(INPUT_SHAPE, ACTION_DIM)  
@@ -237,7 +234,6 @@ if __name__ == '__main__':
     # paused at the begining
     paused = True
     paused = Tool.Helper.pause_game(paused)
-
     max_episode = 30000
     # 开始训练
     episode = 0

@@ -166,31 +166,37 @@ def Look_up():
 # 负责重开游戏的脚本, 根据下箭头调整级别
 def restart():
     station_size = (230, 230, 1670, 930)
+    print("hunky1")
     while True:
         station = cv2.resize(cv2.cvtColor(grab_screen(station_size), cv2.COLOR_RGBA2RGB),(1000,500))
         if station[187][300][0] != 0: 
             time.sleep(1)
         else:
             break
+    print("hunky2")
     time.sleep(1)
     Look_up()
     time.sleep(1.5)
     Look_up()
     time.sleep(1)
-    while True:
-        station = cv2.resize(cv2.cvtColor(grab_screen(station_size), cv2.COLOR_RGBA2RGB),(1000,500))
-        if station[187][612][0] > 200: 
-            # PressKey(DOWN_ARROW)
-            # time.sleep(0.1)
-            # ReleaseKey(DOWN_ARROW)
-            PressKey(C)
-            time.sleep(0.1)
-            ReleaseKey(C)
-            break
-        else:
-            Look_up()
-            time.sleep(0.2)
-
+    print("hunky3")
+    PressKey(C)
+    time.sleep(0.1)
+    ReleaseKey(C)
+    # while True:
+    #     station = cv2.resize(cv2.cvtColor(grab_screen(station_size), cv2.COLOR_RGBA2RGB),(1000,500))
+    #     if station[187][612][0] > 200: 
+    #         # PressKey(DOWN_ARROW)
+    #         # time.sleep(0.1)
+    #         # ReleaseKey(DOWN_ARROW)
+    #         PressKey(C)
+    #         time.sleep(0.1)
+    #         ReleaseKey(C)
+    #         break
+    #     else:
+    #         Look_up()
+    #         time.sleep(0.2)
+    print("hunky4")
 
 # List for action functions
 # 定义动作空间, 记得更改ACTION_DIM

@@ -68,7 +68,6 @@ class Model:
         self.move_loss = []
 
     def load_model(self):
-
         # self.shared_model = load_model("./model/shared_model.h5", custom_objects={'BasicBlock': BasicBlock})
         if os.path.exists("./model/act_part.h5"):
             print("load action model")
